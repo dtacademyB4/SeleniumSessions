@@ -46,7 +46,7 @@ public class CSSSelectors {
         driver.findElement(By.cssSelector("a[href='/enroll-bsa'][class='button contact-ready-button w-button']")).click();
 
        // input[name^='Register'] -> input element with name attribute whose value starts with Register
-        driver.findElement(By.cssSelector("input[name^='Register']"))
+        driver.findElement(By.cssSelector("input[name^='Register']")).click();
 
 
 
