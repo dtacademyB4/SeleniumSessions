@@ -24,9 +24,9 @@ public class WebTables {
         driver.findElement(By.id("ctl00_MainContent_username")).sendKeys("Tester");
         driver.findElement(By.id("ctl00_MainContent_password")).sendKeys("test" + Keys.ENTER );
 
-        List<WebElement> elements = driver.findElements(By.xpath(" //table[@id='ctl00_MainContent_orderGrid']//tr[1]//th"));
+        List<WebElement> firstRowCells = driver.findElements(By.xpath(" //table[@id='ctl00_MainContent_orderGrid']//tr[1]//th"));
 
-        for (WebElement element : elements) {
+        for (WebElement element : firstRowCells) {
             System.out.print(element.getText() + " ");
         }
 
@@ -46,6 +46,16 @@ public class WebTables {
         for (WebElement row : rows) {
             System.out.println(row.getText());
         }
+
+
+        System.out.println("The columns: " + firstRowCells.size() );
+        System.out.println("The rows: " + rows.size());
+
+        // To access specific table cell, indicate its row and cell number
+        WebElement element = driver.findElement(By.xpath("//table[@id='ctl00_MainContent_orderGrid']//tr[3]//td[7]"));
+
+        System.out.println(element.getText());
+
 
     }
 }
