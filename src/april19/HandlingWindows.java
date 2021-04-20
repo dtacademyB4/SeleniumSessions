@@ -40,9 +40,9 @@ public class HandlingWindows {
 
         System.out.println(driver.findElement(By.xpath("//h2[@class='about-side-header']")).getText());
 
-        driver.switchTo().window(windowHandleParent);
+        driver.switchTo().window(windowHandleParent); // switch back to parent window
 
-        System.out.println(driver.getTitle());
+        System.out.println(driver.getTitle()); // verifying parent window title
 
 
 
