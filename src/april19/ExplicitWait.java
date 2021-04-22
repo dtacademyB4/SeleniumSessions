@@ -35,7 +35,7 @@ public class ExplicitWait {
 
         wait.until(ExpectedConditions.elementToBeClickable(element));
 
-       element.sendKeys("hola como estas?");
+        element.sendKeys("hola como estas?");
 
    //     TimeoutException: Expected condition failed: waiting for element to be clickable:
 
@@ -55,7 +55,7 @@ public class ExplicitWait {
                 .pollingEvery(Duration.ofMillis(500))
                 .ignoring(NoSuchElementException.class);
 
-       wait2.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//input[@id='checkbox']")));
+       new WebDriverWait(driver,10).until(ExpectedConditions.presenceOfElementLocated(By.xpath("//input[@id='checkbox']")));
 
         driver.findElement(By.xpath("//input[@id='checkbox']")).click();
 
